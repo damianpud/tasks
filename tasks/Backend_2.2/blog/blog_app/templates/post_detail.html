@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load post_extra %}
+
+{% block content %}
+
+  <div class="row">
+      <div class="col">
+        {{ post|attr_as_p:'title' }}
+        {{ post|attr_as_p:'created' }}
+        {{ post|attr_as_p:'updated' }}
+        {{ post|attr_as_p:'author' }}
+      </div>
+  </div>
+  <p></p>
+  <div class="row">
+    <div class="col-xl-1"></div>
+    <div class="col">
+      {{ post|attr_as_p:'body' }}
+    </div>
+    <div class="col-xl-1"></div>
+  </div>
+
+{% endblock %}

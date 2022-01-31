@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            Are you sure you want to delete post "{{ object.title }}" from database?
+        </p>
+        <input type="submit" value="Submit" class="btn btn-outline-danger">
+        <a class="btn btn-outline-success" type="button" href="{% url 'index' %}">
+            Cancel
+        </a>
+    </form>
+{% endblock %}
